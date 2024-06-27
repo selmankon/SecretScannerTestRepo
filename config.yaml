@@ -1,0 +1,13 @@
+# john doe's config file 
+aws_secret = "AKIAIOSFODNN7EXAMPLE!"
+aws_sc = "AKIAIOSFODNN7EXAMPLE"
+aws: "AKIAIOSFODNN7EXAMPLE"
+my_perfect_json_data = {
+  "engine": "db2",
+  "host": "<instance host name/resolvable DNS name>",
+  "username": "deadb33ff",
+  "password": "HeYiMvErYsECRUEEEEQWE@€",
+  "dbname": "submariner",
+  "port": 3306,
+  "masterarn": "arn:aws:sns:us-east-1:123456789012:example-sns-topic-name"
+}
