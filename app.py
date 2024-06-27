@@ -1,13 +1,30 @@
-# Dockerfile
-# count dooku told me that the dockerfile should be inside app.py
-FROM python:3.8-slim
+# app.py
+import base64
 
-ENV API_KEY="12345-abcde-67890-fghij"
-ENV DB_PASSWORD="sup3rS3cr3t!"
+api_key = "12345-abcde-67890-fghij"
+db_password = "sup3rS3cr3t!"
+encoded_credz = base64.b64encode(b"admin:password").decode("utf-8")
 
-COPY . /app
-WORKDIR /app
-RUN --mount=type=secret,id=mytoken TOKEN=$(cat /run/dooku-secrets/password)
-RUN pip install -r requirements.txt
+users = {
+    "admin": "admin123"
+}
 
-CMD ["python", "app.py"]
+def login(username, password):
+    if username in users and users[username] == password:
+        return "Login successful"
+    return "Login failed"
+
+def register(username, password):
+    if username not in users:
+        users[username] = password
+        return "Registration successful"
+    return "User already exists"
+
+def list_products():
+    products = ["Mouse - $10", "Keyboard - $20", "Monitor - $100"]
+    return "\n".join(products)
+
+
+if __name__ == "__main__":
+    print("Welcome to the samades' e-commerce app!")
+    print(list_products())
