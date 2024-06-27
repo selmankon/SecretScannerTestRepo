@@ -24,6 +24,9 @@ def list_products():
     products = ["Mouse - $10", "Keyboard - $20", "Monitor - $100"]
     return "\n".join(products)
 
+smtp_pass = "eM@ilP@ssw0rd!"
+smtp_real_pwd = "noThiStHisTheOne"
+
 if __name__ == "__main__":
     print("Welcome to the samades' e-commerce app!")
     print(list_products())
